@@ -30,10 +30,10 @@ day date
 INSERT INTO Reserves VALUES (1, 9002, '2020-12-01');
 INSERT INTO Reserves VALUES (3, 9002, '2020-12-11');
 INSERT INTO Reserves VALUES (1, 9001, '2020-12-03');
-INSERT INTO Reserves VALUES (3, 9001, '2020-12-03');
+INSERT INTO Reserves VALUES (2, 9001, '2020-12-03');
 INSERT INTO Reserves VALUES (3, 9001, '2020-12-03');
 INSERT INTO Reserves VALUES (1, 9001, '2020-12-03');
-INSERT INTO Reserves VALUES (3, 9001, '2020-12-03');
+INSERT INTO Reserves VALUES (2, 9001, '2020-12-03');
 select * from Reserves;
 
 select Customers.name
@@ -41,12 +41,6 @@ from Reserves, Customers, Boats
 where Reserves.cid = Customers.cid
 and Reserves.bid = Boats.bid
 and Boats.colour = "blue";
-
-select Customers.name
-from Customers
-left join Reserves
-on Reserves.cid = Customers.cid
-where Reserves.cid is null;
 
 select bid, day, count(*) as reservation_number
 from Reserves
